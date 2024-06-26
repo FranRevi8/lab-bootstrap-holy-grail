@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Grail Layout</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        .main-content {
+            min-height: 2000px; /* Añadimos altura para poder ver el esquema de la web como si tuviera contenido */
+        }
+    </style>
+</head>
+<body>
+    <!--        EXPLICACION DE LAS CLASES:
+                col md: Entre todas las que añadas, deben sumar 12, que es el máximo de la web. En mi caso elijo col-md-2 para las barras laterales y, como 2+2=4 y 12-4=8 -> pongo al main col-md-8. Jugando con estas clases cambias la apariencia gral.
+                col 12: Para que ocupe el 100% del padre, el div row en cada caso.
+                order md 1: Para que en dispositivos de tamaño medio el elemento se muestre primero
+                order 2: Para que se muestre lo segundo: esto hace que si hacemos la pag más pequeña, el main aparezca 1ero
+                sidebar y maincontent: Están especificadas aquí mismo, en <style> para añadir altura y que se vea el esquema de la web rellenada
+                p y m: con la letra, un guión y un número, hacemos padding o margin y unos estándares más o menos grandes en función del número.    
+    -->
+    <div class="container-fluid">
+        <div class="row">
+            <header class="col-12 text-center bg-dark text-light p-3">
+                <h1>Encabezado</h1>
+            </header>
+        </div>
+        <div class="row">
+            <aside class="col-md-2 col-12 order-md-1 order-2 bg-secondary text-light p-3">
+                <h2>Barra Lateral Izquierda</h2>
+                <p>Contenido de la barra lateral izquierda.</p>
+            </aside>
+            <main class="main-content col-md-8 col-12 order-md-2 order-1 bg-light p-3">
+                <h2>Contenido Principal</h2>
+                <p>Este es el contenido principal de la página.</p>
+            </main>
+            <aside class="col-md-2 col-12 order-md-3 order-3 bg-secondary text-light p-3">
+                <h2>Barra Lateral Derecha</h2>
+                <p>Contenido de la barra lateral derecha.</p>
+            </aside>
+        </div>
+        <div class="row">
+            <footer class="col-12 text-center bg-dark text-light p-3">
+                <p>Pie de página</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
